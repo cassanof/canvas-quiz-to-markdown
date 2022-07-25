@@ -1,0 +1,31 @@
+{
+  "name": "Canvas Quiz Printer",
+  "description": "Blah blah blah",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "./background.js"
+  },
+  "action": {
+    "default_popup": "./popup.html",
+    "default_icons": {
+      "16": "./images/icon-16x16.png",
+      "32": "./images/icon-32x32.png",
+      "48": "./images/icon-48x48.png",
+      "128": "./images/icon-128x128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://northeastern.instructure.com/*/courses/*/quizzes/*/take"
+      ],
+      "js": ["content_script.js"]
+    }
+  ],
+  "options_page": "./options.html",
+  "permissions": ["activeTab", "tabs", "storage", "scripting"],
+  "host_permissions": [
+    "https://northeastern.instructure.com/*/courses/*/quizzes/*/take"
+  ]
+}
