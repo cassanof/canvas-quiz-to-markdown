@@ -15,17 +15,9 @@
       "128": "./images/icon-128x128.png"
     }
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "https://northeastern.instructure.com/*/courses/*/quizzes/*/take"
-      ],
-      "js": ["content_script.js"]
-    }
-  ],
   "options_page": "./options.html",
   "permissions": ["activeTab", "tabs", "storage", "scripting"],
   "host_permissions": [
-    "https://northeastern.instructure.com/*/courses/*/quizzes/*/take"
+    "https://*/*/courses/*/quizzes/*"
   ]
 }
